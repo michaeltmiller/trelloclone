@@ -1,0 +1,28 @@
+<div class='list-name'>{{list.name}}</div>
+<br>
+<ul class='cards-list' dnd-list='cards'
+ dnd-allowed-types="['card']"
+ dnd-drop="callback({targetList: list, targetIndex: index, targetPosition: $index})"
+>
+<li ng-repeat="card in cards | orderBy : 'card_position'"
+ dnd-type="'card'" 
+ dnd-draggable='card'
+ dnd-moved="moved('stuff')"
+   dnd-effect-allowed='move'
+   dnd-callback='onDrop(targetList, targetIndex, targetPosition)'
+   dnd-dragstart='dragstartCallback(card.card_id, card.list_id, card.card_position)'
+>
+	<card-dir card='card'></card-dir>
+</li>
+</ul>
+<div class='add-card'>
+<div ng-hide='addCardForm'
+ 	 ng-click='addCardForm=!addCardForm'
+ 	 class='add-card-before'>Add a card...</div>
+<div ng-show='addCardForm' class='after'>
+<textarea type="text" ng-model='newCard.name'></textarea><br>
+<div class='add-card-controls'>
+<button ng-click='createCard(newCard)'>Add Card</button><span class='cancel-button' ng-click='addCardForm=!addCardForm'>+</span>
+</div>
+</div>
+</div>

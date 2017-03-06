@@ -1,0 +1,342 @@
+.dndDraggingSource {
+  display: none; }
+
+.dndDragging {
+  transition: 1s;
+  transform: rotate(7deg) !important;
+  opacity: 1; }
+
+.dndPlaceholder {
+  margin-top: 7px;
+  display: inline-block;
+  min-height: 42px;
+  max-height: 300px;
+  min-width: 275px;
+  border-radius: 3px;
+  background-color: #006CAB; }
+
+* {
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif; }
+
+.user-card-dir {
+  top: 9px;
+  position: relative;
+  display: inline-block; }
+
+.initials {
+  background-color: #D6DADC;
+  color: grey;
+  border-radius: 3px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px; }
+
+.nav {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-weight: bold;
+  background-color: #0067A3;
+  position: fixed;
+  width: 100vw;
+  height: 35px;
+  padding: 7px; }
+
+.logout {
+  position: relative;
+  top: -4px; }
+
+.leftnav {
+  margin-top: auto;
+  margin-bottom: auto; }
+
+.centernav {
+  margin: auto; }
+
+.rightnav {
+  margin-right: 3px;
+  margin-top: auto;
+  margin-bottom: auto; }
+
+.board-wrapper {
+  background-color: #0079BF;
+  height: 100vh;
+  max-height: 100vh;
+  overflow-y: hidden; }
+  .board-wrapper ::-webkit-scrollbar-button {
+    display: none; }
+  .board-wrapper .board-title {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 10px; }
+
+.board-button {
+  padding: 2px; }
+
+button {
+  color: white;
+  border-style: none;
+  border-radius: 3px;
+  padding: 10px;
+  background: linear-gradient(to bottom, #61BD4F 0, #5AAC44 100%); }
+
+button:hover {
+  background: linear-gradient(to bottom, #5AAC44 0, #519839 100%); }
+
+ul {
+  list-style-type: none;
+  padding: 0; }
+
+li {
+  padding: 0;
+  list-style-type: none; }
+
+.menu {
+  width: 300px;
+  position: absolute;
+  right: 0;
+  top: 37px;
+  bottom: 0;
+  border-radius: 3px;
+  background-color: #E2E4E6; }
+  .menu .menu-right {
+    position: absolute;
+    right: 0;
+    top: 0; }
+  .menu .title {
+    border-bottom: 1px solid grey;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center; }
+
+.menu-open {
+  width: 79vw;
+  height: 92vh; }
+
+.menu-button {
+  font-size: 13px;
+  float: right;
+  margin-right: 7px;
+  font-weight: normal;
+  text-decoration: underline;
+  margin-top: 9px;
+  margin-bottom: auto;
+  border-radius: 3px; }
+
+.menu-button:hover {
+  background-color: darken #0079BF, 4%; }
+
+.board-lists {
+  display: flex;
+  flex-direction: row; }
+
+.board-content {
+  display: flex;
+  height: 92vh;
+  background-color: #0079BF;
+  overflow-x: auto; }
+
+.boards-content {
+  height: 96vh;
+  background-color: white; }
+  .boards-content .boards {
+    width: 80%;
+    margin: auto; }
+  .boards-content .add-board {
+    color: white; }
+    .boards-content .add-board input {
+      background-color: white;
+      opacity: 0.5; }
+  .boards-content .board {
+    padding: 2px;
+    color: white;
+    font-weight: bold;
+    margin: 5px;
+    vertical-align: top;
+    display: inline-block;
+    border-radius: 3px;
+    background-color: #0079BF;
+    width: 175px;
+    min-width: 175px;
+    height: 75px; }
+
+#addBoard {
+  margin-left: 0.5px; }
+
+.add-list {
+  color: white;
+  padding: 12px;
+  margin-top: 7px;
+  border-radius: 3px;
+  display: inline-block;
+  background-color: #006cab;
+  min-width: 275px;
+  height: 45px; }
+
+.hover-class:hover {
+  background-color: #0066a0; }
+
+.list {
+  overflow-y: auto;
+  max-height: 88vh;
+  padding: 8px;
+  margin: 7px;
+  border-radius: 3px;
+  background-color: #E2E4E6;
+  width: 275px;
+  display: inline-block; }
+  .list .list-name {
+    font-weight: bold;
+    margin-bottom: -10px; }
+  .list textarea {
+    min-height: 60px;
+    width: 100%;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.23);
+    background-color: white;
+    padding: 10px;
+    word-wrap: break-word; }
+  .list .dndDraggingSource {
+    display: none; }
+  .list .dndDragging {
+    transform: rotate(7deg) !important;
+    opacity: 1; }
+  .list .dndPlaceholder {
+    display: inline-block;
+    min-height: 42px;
+    min-width: 259px;
+    background-color: grey !important; }
+
+#addList {
+  color: black;
+  margin: -10px; }
+
+.cancel-button {
+  color: grey;
+  display: inline-block;
+  margin-top: -25px;
+  padding: 0;
+  transform: rotate(45deg) translate(12px, 3px);
+  font-size: 50px; }
+
+.cancel-button:hover {
+  color: black; }
+
+.cards-list {
+  min-height: 25px; }
+
+.card {
+  width: 100%;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.23);
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: white;
+  padding: 10px;
+  word-wrap: break-word; }
+  .card .comment-count {
+    margin-top: -2px;
+    margin-bottom: -5px; }
+  .card .comment-logo img {
+    width: 19px; }
+  .card .small-text {
+    font-size: 11px;
+    color: grey; }
+
+.add-card-before {
+  margin: 0 auto;
+  width: 100%;
+  padding: 3px; }
+
+.add-card-controls {
+  overflow: hidden; }
+
+.card:hover {
+  background-color: #EDEFF0; }
+
+.add-card-before:hover {
+  color: #616162;
+  background-color: #CDD2D4; }
+
+.modal-open {
+  overflow-y: auto;
+  width: 100%;
+  height: 500px;
+  background-color: #EDEFF0; }
+  .modal-open .modal-open-content {
+    padding-left: 15px; }
+  .modal-open button {
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.23);
+    padding: 10px 25px 10px 25px; }
+  .modal-open .comment-box {
+    width: 400px;
+    height: 100px; }
+  .modal-open .comment-header {
+    padding-top: 6px;
+    font-weight: bold;
+    font-size: 21px; }
+  .modal-open .comment-box-left {
+    width: 80%;
+    float: left; }
+    .modal-open .comment-box-left textarea {
+      border-radius: 3px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.23); }
+    .modal-open .comment-box-left .title {
+      font-weight: bold;
+      font-size: 16px; }
+  .modal-open .comment-right {
+    height: 400px;
+    width: 20%;
+    float: right; }
+  .modal-open .large-logo {
+    width: 25px;
+    height: 25px; }
+    .modal-open .large-logo img {
+      margin-right: 4px;
+      width: 25px;
+      height: 25px; }
+  .modal-open .comment {
+    display: flex; }
+    .modal-open .comment .name {
+      font-weight: bold; }
+    .modal-open .comment .content {
+      border-radius: 3px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.23);
+      margin-top: 3px;
+      margin-bottom: 5px;
+      margin-left: 28px;
+      background-color: white;
+      padding: 10px; }
+  .modal-open .comments-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 13px;
+    margin-bottom: 10px; }
+    .modal-open .comments-title img {
+      width: 30px; }
+
+::-webkit-scrollbar {
+  width: 12px; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 10px;
+  border-radius: 10px; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #66A4C7;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5); }
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #66A4C7; }

@@ -1,0 +1,30 @@
+{
+  "name": "trelloclone",
+  "version": "0.0.0",
+  "private": false,
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "dependencies": {
+    "angular-drag-and-drop-lists": "^2.1.0",
+    "bcryptjs": "^2.3.0",
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "express-session": "^1.12.1",
+    "massive": "^2.5.0",
+    "passport": "^0.3.2",
+    "passport-auth0": "^0.6.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-less": "^3.1.0",
+    "gulp-ng-annotate": "^2.0.0",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^1.5.1",
+    "gulp-watch": "^4.3.5"
+  }
+}

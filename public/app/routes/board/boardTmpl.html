@@ -1,0 +1,50 @@
+<div class='board-wrapper'>
+<nav-dir></nav-dir>
+<div class='board-title'>{{currentBoard.title}}<span ng-click='menuOpen=!menuOpen' class='menu-button'>Show Menu</span></div>
+<div class='board-menu'>
+<div ng-class='{"menu-open": menuOpen}' class='board-content'>
+    <ul class='board-lists'
+     dnd-list='lists'
+      dnd-allowed-types="['list']"
+       dnd-drop='dropCallback(index, external, type, callback)'>
+        <li ng-repeat="list in lists | orderBy : 'list_position'" dnd-draggable='list'
+          dnd-type="'list'"
+           dnd-effect-allowed='move'
+             dnd-dragstart='dragStartCallback(list.list_id, list.list_position)'>
+            <list-dir class='list' list='list' update-lists='getLists()'></list-dir>
+        </li>
+        <li class="add-list hover-class">
+        <div ng-hide='addList' ng-click='addList=!addList'>
+            Add a list...
+        </div>
+            <!-- <div class='list' ng-show='addList'>
+            <input type="text" ng-model='newList.name'>
+            <button ng-click='createList(newList); addList=!addList'>Save list</button><button ng-click='addList=!addList'>X</button>
+            </div> -->
+            <div id='addList' ng-show='addList' class='list'>
+            <textarea placeholder='Add a list...' type="text" ng-model='newList.name'></textarea><br>
+            <div class='add-card-controls'>
+            <button ng-click='createList(newList)'>Save</button><span class='cancel-button' ng-click='addList=!addList'>+</span>
+            </div>
+            </div>
+        </li>
+    </ul>
+</div>
+  <div ng-show='menuOpen' class='menu'>
+  <div class='title'>Menu</div>
+  <span ng-click='menuOpen=!menuOpen' class='menu-right'>close menu</span>
+  <div class='users'>
+    <span ng-repeat='otheruser in users'>
+      <user-card-dir title='{{otheruser.email}}' class='user-card-dir' username='{{otheruser.name}}'></user-card-dir>
+    </span>
+  </div>
+
+    <div>
+      <input type="text" ng-model='newUser.email'>
+      <button ng-click='addUser(newUser)'></button>
+    </div>
+    
+  </div>
+  </div>
+</div>
+
