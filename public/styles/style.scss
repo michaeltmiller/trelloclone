@@ -32,6 +32,34 @@ $GREY: #E2E4E6;
 	display: inline-block;
 }
 
+.label{
+    float: right;
+    width:50px;
+    height:15px;
+    border-radius:3px;
+}
+.label{
+    width:50px;
+    height:15px;
+    border-radius:3px;
+}
+
+
+.green{
+    border-radius: 3px;
+    background-color: green;
+}
+
+.yellow{
+    border-radius: 3px;
+    background-color: yellow;
+}
+
+.red{    
+    border-radius: 3px;
+    background-color: red;
+}
+
 .initials{
 	background-color: #D6DADC;
 	color: grey;
@@ -41,6 +69,74 @@ $GREY: #E2E4E6;
 	text-align: center;
 	font-weight: bold;
 	font-size: 20px;	
+}
+.landing{
+    line-height: 30px;
+    position: relative;
+    margin-top: 100px;
+    max-width: 430px;
+    font-weight: 600;
+    font-family: "jaf-facitweb","Helvetica Neue",Arial,sans-serif;
+    color: white;
+}
+.subtext{
+    margin-top: -11px;
+    font-size: 12px;
+    margin-bottom: 28px;
+}
+.register-link{
+    text-decoration: underline;
+    color: white;
+}
+.login-form{
+    padding:0px;
+}
+.demo-btn{
+    margin-top: 10px;
+    background-color: #026aa7;
+}
+.login-btn{
+    font-weight: 600;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+.login-background{
+     background:  
+     linear-gradient(
+      rgba(0, 121, 191, 0.80), 
+      rgba(0, 121, 191, 0.80)
+    ), url('./background.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
+.login-wrapper{
+    .login{
+        margin-top: 25px;
+        padding: 35px;
+        border-radius: 3px;
+        background-color: white;
+    } 
+    .register{
+        padding: 35px;
+        border-radius: 3px;
+        background-color: white;
+    }
+
+    .title{
+        text-align: center;
+        font-size: 28px;
+    }
+
+    margin-top: -5px;
+    height: 96vh;
+    overflow-y: hidden;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
 }
 
 .nav {
@@ -100,19 +196,23 @@ a {
 	padding: 2px;
 }
 
-button{
-	color: white;
-	border-style: none;
-	border-radius: 3px;
-	padding: 10px;
-	background: linear-gradient(to bottom,#61BD4F 0,#5AAC44 100%);
-	}
-
-
-
-button:hover{
-	background: linear-gradient(to bottom,#5AAC44 0,#519839 100%);
+.filter{
+    margin-top: 20px;    
 }
+
+// button{
+// 	color: white;
+// 	border-style: none;
+// 	border-radius: 3px;
+// 	padding: 10px;
+// 	background: linear-gradient(to bottom,#61BD4F 0,#5AAC44 100%);
+// 	}
+
+
+
+// button:hover{
+// 	background: linear-gradient(to bottom,#5AAC44 0,#519839 100%);
+// }
 
 
 
@@ -124,28 +224,64 @@ li {
         padding: 0;
         list-style-type: none;
     }
+
+
     
 .menu{
+    padding: 10px;
 	width: 300px;
 	position: absolute;
 	right: 0;
 	top: 37px;
 	bottom: 0;
 	border-radius: 3px;
-	background-color: $GREY;
+	background-color: #EDEFF0;
+
+    input{
+    line-height: 30px;
+    }
 
 	.menu-right {
 	    position: absolute;
-    	right: 0;
-    	top: 0;
+    	right: 5px;
+    	top: 5px;
 
 	}
 	.title{
-		border-bottom: 1px solid grey;
+		border-bottom: 1px solid lightgrey;
 		font-size: 24px;
 		font-weight: bold;
 		text-align: center;
 	}
+
+    .users{
+    margin-bottom: 15px;
+    }
+
+    button{
+    transform: translateY(1px);
+    padding-bottom: 4px;
+    padding-top: 7px;
+    }
+
+    .add-user{
+
+        button{
+
+        }
+        padding-bottom: 20px;
+        border-bottom: 1px solid lightgrey;
+    }
+
+    .user-card-dir{
+    background-color: darken ( #D6DADC, 3% );
+    }
+
+    input{
+    border-style: none;
+    border-radius: 3px;
+    }
+
 }
 
 .menu-open {
@@ -195,8 +331,7 @@ li {
 	.add-board {
 		color: white;
 		input{
-		background-color: white;
-		opacity: 0.5;
+		background-color: $BACKGROUND;
 		}
 	}
 	.board {
@@ -215,6 +350,8 @@ li {
 }
 
 #addBoard{
+    text-decoration: underline;
+    font-weight: normal;
 	margin-left: 0.5px;	
 }
 

@@ -1,20 +1,20 @@
 // EXTERNAL MODULES //
-var express = require('express');
-var bodyParser = require('body-parser');
-var session = require('express-session');
-var massive = require('massive');
+const express = require('express');
+const bodyParser = require('body-parser');
+const session = require('express-session');
+const massive = require('massive');
 // CONFIG //
-var config = require('./config');
+const config = require('./config');
 
 // EXPRESS //
-var app = module.exports = express();
+const app = module.exports = express();
 
 app.use(express.static(__dirname + './../public'));
 app.use(bodyParser.json());
 
 // MASSIVE //
-var massiveUri = config.MASSIVE_URI;
-var massiveServer = massive.connectSync({
+const massiveUri = config.MASSIVE_URI;
+const massiveServer = massive.connectSync({
     connectionString: massiveUri
 });
 app.set('db', massiveServer);
@@ -73,6 +73,7 @@ app.get('/api/comments/:card_id', isAuthed, UserCtrl.getComments);
 app.post('/api/comment', isAuthed, UserCtrl.createComment);
 app.post('/api/user', isAuthed, UserCtrl.addUser);
 app.get('/api/users/:board_id', isAuthed, UserCtrl.getUsers);
+app.post('/api/label', isAuthed, UserCtrl.addLabel);
 
 // CONNECTIONS //
 var port = config.PORT;

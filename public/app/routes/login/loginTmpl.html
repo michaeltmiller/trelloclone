@@ -1,13 +1,44 @@
 <nav-dir></nav-dir>
-<form ng-submit="login(user)">
-  Email: <input type="email" ng-model="user.email" required/>
-  Password: <input type="password" ng-model="user.password" required/>
-  <button type="submit">login</button>
+<div class="login-background">
+<div class='login-wrapper'>
+<div class='landing container'>
+<div class='title'>Welcome to Trello!
+  
+  <div class="subtext">(Not actually Trello)</div>
+  <p>
+    Please Log In or <a class='register-link' ui-sref='register'>Register</a>
+  </p>
+</div>
+<div class="login-form">
+<form class='form-group' ng-submit="login(user)">
+  <label for="exampleInputEmail1">Email address</label>
+  <input type="email" class="form-control" placeholder="e.g. Yourname@cooldomain.com" ng-model="user.email" required/>
+    <label for="exampleInputPassword1">Password</label>
+   <input type="password" class="form-control" placeholder="e.g., ••••••••••••"ng-model="user.password" required/>
+   <br>
+   <div class="text-center">
+    <button type="submit" class="btn btn-success login-btn">Log In</button>
+   </div>
 </form>
+  <p class="text-center"> 
+  Don't want to create an account? No problem!
+  <br>
+  Click below to sign in with a demo account.
+  <br>
+    <button type="button" class="btn btn-lg btn-primary login-btn demo-btn" ng-click="login(demo)">DEMO</button>
+  </p> 
+</div>
+</div>
 <br><br><br>
+<!--<div class='register'>
+<div class='title'>Register</div>
+
 <form ng-submit="register(newUser)">
   Name: <input type="text" ng-model="newUser.name" required/>
   Email: <input type="email" ng-model="newUser.email" required/>
   Password: <input type="password" ng-model="newUser.password" required/>
   <button type="submit">Register</button>
 </form>
+</div>-->
+</div>
+</div>
