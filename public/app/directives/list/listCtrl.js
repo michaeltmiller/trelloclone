@@ -19,6 +19,7 @@ angular.module('app').controller('listCtrl', function($scope, authService, userS
 		userService.createCard(newCard).then(function(res) {
 			console.log('creating card', newCard);
 			$scope.getCards($scope.list.list_id);
+			$scope.newCard.name='';
 		});
 	};
 

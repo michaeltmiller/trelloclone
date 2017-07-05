@@ -16,12 +16,29 @@ $scope.open = function () {
 		size: 'lg',
 		scope: $scope,
 		windowClass: 'modal-window'
+	}).closed.then(function(){
+
 	});
 };
 $scope.createComment = function(newComment) {
 	$scope.newComment.card_id=$scope.card.card_id;
 	userService.createComment(newComment).then(function(res) {
 		$scope.getComments($scope.card.card_id);
+		$scope.newComment.comment_content='';
 	});
 };
+$scope.updateLabel = {};
+$scope.addLabel = function(updateLabel) {
+	$scope.updateLabel.card_id= $scope.card.card_id;
+	userService.addLabel(updateLabel).then(function(res) {
+		$scope.getCards($scope.card.list_id);
+	});
+};
+
+$scope.getCards = function(list_id) {
+		userService.getCards(list_id).then(function(res){
+			$scope.cards=res.data;
+			console.log('got cards for', list_id);
+		});
+	};
 });

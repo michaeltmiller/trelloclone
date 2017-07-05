@@ -22,7 +22,13 @@
         </div>
     </div>
     <div class='comment-right'>
-        <button>add label</button>
+    <select ng-model='updateLabel.label' name="labels">
+  <option value=' '>None</option>
+  <option value='green' >Green</option>
+  <option value='yellow' >Yellow</option>
+  <option value='red' >Red</option>
+</select>
+        <button ng-click='addLabel(updateLabel)'>Add Label</button>
     </div>
     </div>
 </div>

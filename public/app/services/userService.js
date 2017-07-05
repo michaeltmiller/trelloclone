@@ -92,6 +92,14 @@ angular.module("app")
 			});
 		};
 
+		this.addLabel = function(updateLabel) {
+			return $http ({
+				method: 'POST',
+				url: '/api/label',
+				data: updateLabel
+			});
+		};
+
 		this.addUser = function(newUser) {
 			return $http ({
 				method: 'POST',

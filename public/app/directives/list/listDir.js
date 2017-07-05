@@ -4,7 +4,9 @@ angular.module('app').directive('listDir', function() {
         templateUrl: './app/directives/list/listTmpl.html',
         controller: 'listCtrl',
         scope: {
-        	list: '='
+        	list: '=',
+        	query: '@',
+        	labelquery: '@'
         }
 
     };

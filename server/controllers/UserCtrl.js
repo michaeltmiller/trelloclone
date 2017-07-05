@@ -177,8 +177,8 @@ module.exports = {
     	if (!results[0]) {
     		db.user.user_create_card([
     		req.body.name,
-    		null,
-    		null,
+            null,
+    		'default',
     		req.body.list_id,
     		1
     		], function(err, results){
@@ -192,7 +192,7 @@ module.exports = {
     	db.user.user_create_card([
     		req.body.name,
     		null,
-    		null,
+    		'default',
     		req.body.list_id,
     		results[0].card_position+1
     		], function(err, results){
@@ -323,6 +323,18 @@ module.exports = {
     	});
 
     	}
+    },
+
+    addLabel: function(req, res, next) {
+        db.user.user_update_label([
+                req.body.label,
+                req.body.card_id
+            ], function(err, results) {
+                if (err) {console.log(err);}
+                else {
+                    res.send(results);
+                }
+            });
     },
 
     updateCards: function(req, res, next) {

@@ -4,7 +4,7 @@
  dnd-allowed-types="['card']"
  dnd-drop="callback({targetList: list, targetIndex: index, targetPosition: $index})"
 >
-<li ng-repeat="card in cards | orderBy : 'card_position'"
+<li ng-repeat="card in cards | orderBy : 'card_position' | filter: {name: query} | filter: {label: labelquery}"
  dnd-type="'card'" 
  dnd-draggable='card'
  dnd-moved="moved('stuff')"

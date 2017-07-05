@@ -11,7 +11,7 @@
           dnd-type="'list'"
            dnd-effect-allowed='move'
              dnd-dragstart='dragStartCallback(list.list_id, list.list_position)'>
-            <list-dir class='list' list='list' update-lists='getLists()'></list-dir>
+            <list-dir labelquery='{{search_label}}' query='{{search_term}}' class='list' list='list' update-lists='getLists()'></list-dir>
         </li>
         <li class="add-list hover-class">
         <div ng-hide='addList' ng-click='addList=!addList'>
@@ -32,16 +32,30 @@
 </div>
   <div ng-show='menuOpen' class='menu'>
   <div class='title'>Menu</div>
-  <span ng-click='menuOpen=!menuOpen' class='menu-right'>close menu</span>
+  <span ng-click='menuOpen=!menuOpen' class='menu-right'><i class="fa fa-times" aria-hidden="true"></i>
+</span>
   <div class='users'>
     <span ng-repeat='otheruser in users'>
       <user-card-dir title='{{otheruser.email}}' class='user-card-dir' username='{{otheruser.name}}'></user-card-dir>
     </span>
   </div>
 
-    <div>
-      <input type="text" ng-model='newUser.email'>
-      <button ng-click='addUser(newUser)'></button>
+    <div class='add-user'>
+      <input placeholder='Add User By Email...' type="text" ng-model='newUser.email'>
+      <button ng-click='addUser(newUser)'><i class="fa fa-user-plus" aria-hidden="true"></i>
+</button>
+    </div>
+
+    <div class='filter'>
+      <textarea ng-model='search_term' placeholder='Search Cards...'></textarea>
+       <select ng-model='search_label' name="labels">
+          <option value=''>All</option>
+          <option class='green' value='green' >Green</option>
+          <option class='yellow' value='yellow' >Yellow</option>
+          <option class='red' value='red' >Red</option>
+</select>
+
+
     </div>
     
   </div>
