@@ -17,7 +17,7 @@ var app = angular.module("app", ['ui.router', 'dndLists', 'ui.bootstrap'])
 		})
 		.state('register', {
 			url: '/register',
-			templateUrl: './app/routes/signin/register.html',
+			templateUrl: './app/routes/register/register.html',
 			controller: 'loginCtrl'
 		})
 		.state('boards', {

@@ -89,6 +89,12 @@
   padding-left: 45px;
   padding-right: 45px; }
 
+.register {
+  padding: 10px;
+  margin: auto;
+  max-width: 450px;
+  font-size: 28px; }
+
 .login-background {
   background: linear-gradient(rgba(0, 121, 191, 0.8), rgba(0, 121, 191, 0.8)), url("./background.jpeg");
   background-position: center;
@@ -104,10 +110,6 @@
   flex-direction: column; }
   .login-wrapper .login {
     margin-top: 25px;
-    padding: 35px;
-    border-radius: 3px;
-    background-color: white; }
-  .login-wrapper .register {
     padding: 35px;
     border-radius: 3px;
     background-color: white; }
@@ -236,13 +238,14 @@ li {
 .boards-content {
   height: 96vh;
   background-color: white; }
+  .boards-content .board:hover {
+    background-color: #00598c; }
   .boards-content .boards {
     width: 80%;
     margin: auto; }
   .boards-content .add-board {
-    color: white; }
-    .boards-content .add-board input {
-      background-color: #0079BF; }
+    color: #CDD2D4;
+    background-color: #E2E4E6; }
   .boards-content .board {
     padding: 2px;
     color: white;
@@ -252,14 +255,20 @@ li {
     display: inline-block;
     border-radius: 3px;
     background-color: #0079BF;
-    width: 175px;
-    min-width: 175px;
-    height: 75px; }
+    width: 300px;
+    min-width: 300px;
+    height: 100px; }
 
 #addBoard {
+  height: 100px;
+  color: darkgray;
+  background-color: #E2E4E6;
   text-decoration: underline;
   font-weight: normal;
   margin-left: 0.5px; }
+
+#addBoard:hover {
+  background-color: darkgrey; }
 
 .add-list {
   color: white;

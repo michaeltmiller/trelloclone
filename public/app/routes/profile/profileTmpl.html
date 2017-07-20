@@ -5,11 +5,11 @@
         <div class='board' ng-repeat='board in boards' ui-sref='board({board_id:board.board_id})'>{{board.title}}
         </div>
         <div id='addBoard' class='board add-board'>
-        	<div ng-click='addBoard=!addBoard' ng-hide='addBoard'>Add Board...</div>
+        	 <div ng-click='addBoard=!addBoard' ng-hide='addBoard'>Add Board...</div>
             <div ng-show='addBoard'>
                 <input type='text' ng-model='newBoard.name'><br>
                 <button class='board-button' ng-click='createBoard(newBoard); addBoard=!addBoard'>Create Board</button>
-            </div>
+            </div> 
         </div>
         <br>
         <br>

@@ -1,9 +1,10 @@
 angular.module("app").controller("loginCtrl", function($scope, authService, $state) {
   $scope.user = {
-    email: 't@t.com',
-    password: 't'
-  }
-
+  };
+  $scope.demo = {
+    email: 'demo@demo.com',
+    password: 'demo'
+  };
   $scope.login = function(user) {
     authService.login(user).then(function(response) {
       if (!response.data) {
@@ -22,8 +23,9 @@ angular.module("app").controller("loginCtrl", function($scope, authService, $sta
       if (!response.data) {
         alert('Unable to create user');
       } else {
-        alert('User Created');
+        alert('User Created, please login');
         $scope.newUser = {};
+        $state.go('login');
       }
     }).catch(function(err) {
       alert('Unable to create user');

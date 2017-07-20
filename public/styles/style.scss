@@ -1,4 +1,5 @@
 $BACKGROUND: #0079BF;
+$HOVER: darken( #0079BF, 10%);
 $GREY: #E2E4E6;
 
 .dndDraggingSource {
@@ -102,6 +103,13 @@ $GREY: #E2E4E6;
     padding-left: 45px;
     padding-right: 45px;
 }
+.register{
+    padding: 10px;
+    margin: auto;
+    max-width: 450px;
+    font-size: 28px;
+
+}
 .login-background{
      background:  
      linear-gradient(
@@ -118,13 +126,7 @@ $GREY: #E2E4E6;
         padding: 35px;
         border-radius: 3px;
         background-color: white;
-    } 
-    .register{
-        padding: 35px;
-        border-radius: 3px;
-        background-color: white;
     }
-
     .title{
         text-align: center;
         font-size: 28px;
@@ -319,20 +321,21 @@ li {
 	}
 
 
-
 .boards-content{
 	height: 96vh;
 	background-color: white;
+
+    .board:hover{
+    background-color: $HOVER;
+}
 
 	.boards{
 		width: 80%;
 		margin: auto;
 	}
 	.add-board {
-		color: white;
-		input{
-		background-color: $BACKGROUND;
-		}
+		color: #CDD2D4;
+		background-color: #E2E4E6;
 	}
 	.board {
 		padding: 2px;
@@ -343,17 +346,24 @@ li {
 		display: inline-block;
 	    border-radius: 3px;
 	    background-color: $BACKGROUND;
-	    width: 175px;
-	    min-width: 175px;
-	    height: 75px;
+	    width: 300px;
+	    min-width: 300px;
+	    height: 100px;
 	}
 }
 
 #addBoard{
+    height: 100px;
+		color: darkgray;
+		background-color: #E2E4E6;
     text-decoration: underline;
     font-weight: normal;
-	margin-left: 0.5px;	
+    margin-left: 0.5px;	
+    
 }
+#addBoard:hover{
+        background-color: darkgrey;
+    }
 
 .add-list{
 	color: white;

@@ -1,4 +1,22 @@
-<div> 
+<nav-dir></nav-dir>
 
-TODO paste register form
+<div class='landing container'>
+
+
+
+
+</div>
+<br><br><br>
+<div class='register'>
+<div class='title countainer'>Create new Trello account</div>
+
+<form class="form-group" ng-submit="register(newUser)">
+  <label for="exampleInputName">Name</label>
+  <input type="text" class="form-control" placeholder="James Smith" ng-model="newUser.name" required/>
+  <label for="exampleInputEmail">Email</label>
+  <input type="email" class="form-control" placeholder="James.Smith@domain.com" ng-model="newUser.email" required/>
+  <label for="exampleInputPassword">Password</label>
+  <input type="password" class="form-control" placeholder="e.g., ••••••••••••" ng-model="newUser.password" required/>
+  <button class="btn btn-success login-btn" type="submit">Create Account</button>
+</form>
 </div>
