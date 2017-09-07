@@ -62,4 +62,19 @@ angular.module("app")
             });
         };
         $scope.getUsers($state.params.board_id);
+
+        $scope.labels = [
+            {name:'No Labels', color:'grey', isSelected: false},
+            {name:'red', color:'red', isSelected: false},
+            {name:'yellow', color:'yellow', isSelected: false},
+            {name:'green', color:'green', isSelected: false}
+        ];
+        
+        $scope.toggleLabel= function(label){
+            for (let i=0; i<$scope.labels.length; i++){
+                if ($scope.labels[i].name==label){
+                    $scope.labels[i].isSelected=!$scope.labels[i].isSelected;
+                }
+            }
+        }
     });

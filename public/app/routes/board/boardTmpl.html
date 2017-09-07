@@ -24,7 +24,7 @@
             <div id='addList' ng-show='addList' class='list'>
             <textarea placeholder='Add a list...' type="text" ng-model='newList.name'></textarea><br>
             <div class='add-card-controls'>
-            <button ng-click='createList(newList)'>Save</button><span class='cancel-button' ng-click='addList=!addList'>+</span>
+            <button class="btn btn-success login-btn" ng-click='createList(newList)'>Save</button><span class='cancel-button' ng-click='addList=!addList'><i class="fa fa-times" aria-hidden="true"></i></span>
             </div>
             </div>
         </li>
@@ -47,13 +47,12 @@
     </div>
 
     <div class='filter'>
+      <div class='title'>Filter Cards</div>
       <textarea ng-model='search_term' placeholder='Search Cards...'></textarea>
-       <select ng-model='search_label' name="labels">
-          <option value=''>All</option>
-          <option class='green' value='green' >Green</option>
-          <option class='yellow' value='yellow' >Yellow</option>
-          <option class='red' value='red' >Red</option>
-</select>
+      <div> Type to filter by term</div>
+       <ul class='label-list'>
+          <li class='label-element' ng-click='toggleLabel(label.name)' ng-repeat='label in labels'><div ng-style='{"background-color":label.color}' class="label-swatch"></div> <div class="label-title"> {{label.name}} {{label.isSelected}} </div> <div ng-show="label.isSelected" class="label-selected"><i class="fa fa-check" aria-hidden="true"></i></div></li>
+</ul>
 
 
     </div>

@@ -2,13 +2,22 @@
 <div class='boards-content'>
     <br>
     <div class='boards'>
-        <div class='board' ng-repeat='board in boards' ui-sref='board({board_id:board.board_id})'>{{board.title}}
+        <div class='board' ng-repeat='board in boards' ui-sref='board({board_id:board.board_id})'>
+            <div class='title'>{{board.title}}</div>
         </div>
         <div id='addBoard' class='board add-board'>
-        	 <div ng-click='addBoard=!addBoard' ng-hide='addBoard'>Add Board...</div>
-            <div ng-show='addBoard'>
-                <input type='text' ng-model='newBoard.name'><br>
-                <button class='board-button' ng-click='createBoard(newBoard); addBoard=!addBoard'>Create Board</button>
+        	 <div class='title' ng-click='addBoard=!addBoard' ng-hide='addBoard'>Add Board...</div>
+            <div class='addForm' ng-show='addBoard'>
+                <div class="heading">
+                <span class='add-board-title'> Create Board</span>
+                <span ng-click='addBoard=!addBoard' class='menu-right float-right'><i class="fa fa-times" aria-hidden="true"></i>
+                </span>
+            </div>
+                <form class="form-group form-padded">
+                    <label for='newBoard.name'>Title</label><br>
+                <input class="form-control form-secondary" type='text' ng-model='newBoard.name' placeholder='Like "Team Product Sprint" for example...'><br>
+                <button class='btn btn-success login-btn' ng-click='createBoard(newBoard); addBoard=!addBoard'>Create Board</button>
+            </form>
             </div> 
         </div>
         <br>
@@ -19,3 +28,4 @@
         <button type="button" ng-click="updateUser(user)">update</button> -->
     </div>
 </div>
+

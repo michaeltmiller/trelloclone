@@ -1,5 +1,5 @@
 angular.module("app")
-    .controller("profileCtrl", function($scope, user, authService, userService) {
+    .controller("profileCtrl", function($scope, $uibModal, user, authService, userService, $document) {
         $scope.user = user;
         $scope.boards;
         $scope.newBoard;        
