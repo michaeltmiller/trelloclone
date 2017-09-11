@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS list (
   	name VARCHAR(255),
   	description VARCHAR(255),
   	board_id INTEGER,
-  	list_position SERIAL
+  	list_position INTEGER
 );
 CREATE TABLE IF NOT EXISTS card (
 	card_id SERIAL PRIMARY KEY,

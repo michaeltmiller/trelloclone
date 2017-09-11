@@ -42,7 +42,8 @@ angular.module("app")
 			});
 		};
 		this.createList = function(newList) {
-			return $http ({
+				console.log(newList);
+				return $http ({
 				method: 'POST',
 				url: 'api/list',
 				data: newList

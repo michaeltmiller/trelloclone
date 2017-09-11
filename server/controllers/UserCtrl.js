@@ -156,18 +156,47 @@ module.exports = {
 
     createList: function(req, res, next) {
     	console.log('creating list');
-
-    	db.user.user_create_list([
-    		req.body.name,
-    		null,
-    		currentBoard
-    		], function(err, results) {
-    			if (err) {console.log('error creating list');}
-    				else {
-    					console.log('created list');
-    					res.send(results);
-    				}
-    		});
+		db.user.user_search_highest_list([req.body.board_id], function(err, results){
+			if (!results[0]){
+				db.user.user_create_list([
+					req.body.name,
+					null,
+					currentBoard,
+					1
+					], function(err, results) {
+						if (err) {console.log('error creating list');}
+							else {
+								console.log('created list');
+								res.send(results);
+							}
+					});
+			}
+			else {
+				db.user.user_create_list([
+					req.body.name,
+					null,
+					currentBoard,
+					results[0].list_position+1
+					], function(err, results) {
+						if (err) {console.log('error creating list');}
+							else {
+								console.log('created list');
+								res.send(results);
+							}
+					});
+			}
+		})
+    	// db.user.user_create_list([
+    	// 	req.body.name,
+    	// 	null,
+    	// 	currentBoard
+    	// 	], function(err, results) {
+    	// 		if (err) {console.log('error creating list');}
+    	// 			else {
+    	// 				console.log('created list');
+    	// 				res.send(results);
+    	// 			}
+    	// 	});
     },
 
     createCard: function(req, res, next) {
@@ -178,7 +207,7 @@ module.exports = {
     		db.user.user_create_card([
     		req.body.name,
             null,
-    		'default',
+    		'white',
     		req.body.list_id,
     		1
     		], function(err, results){
@@ -192,7 +221,7 @@ module.exports = {
     	db.user.user_create_card([
     		req.body.name,
     		null,
-    		'default',
+    		'white',
     		req.body.list_id,
     		results[0].card_position+1
     		], function(err, results){
@@ -293,7 +322,8 @@ module.exports = {
     	if (req.body.original_list_position>req.body.position) {
     	db.user.user_update_list_position([
     		req.body.position,
-    		req.body.original_list_position
+			req.body.original_list_position,
+			req.body.board_id
     		], function(err, results){
     		if (err) {console.log('error updating list position');}
     		else {
@@ -308,7 +338,8 @@ module.exports = {
     	});} else {
     		db.user.user_update_list_position_neg([
     		req.body.original_list_position,
-    		req.body.position
+    		req.body.position,
+			req.body.board_id
     		], function(err, results){
     		if (err) {console.log('error updating list position');}
     		else {

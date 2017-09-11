@@ -1,20 +1,22 @@
 <div class='board-wrapper'>
 <nav-dir></nav-dir>
-<div class='board-title'>{{currentBoard.title}}<span ng-click='menuOpen=!menuOpen' class='menu-button'>Show Menu</span></div>
+<div class='board-title'>{{currentBoard.title}}<span ng-click='menuOpen=!menuOpen' class='menu-button point'>Show Menu</span></div>
 <div class='board-menu'>
 <div ng-class='{"menu-open": menuOpen}' class='board-content'>
     <ul class='board-lists'
-     dnd-list='lists'
+     dnd-list='lists point'
       dnd-allowed-types="['list']"
        dnd-drop='dropCallback(index, external, type, callback)'>
         <li ng-repeat="list in lists | orderBy : 'list_position'" dnd-draggable='list'
           dnd-type="'list'"
            dnd-effect-allowed='move'
              dnd-dragstart='dragStartCallback(list.list_id, list.list_position)'>
-            <list-dir labelquery='{{search_label}}' query='{{search_term}}' class='list' list='list' update-lists='getLists()'></list-dir>
+            <list-dir labelquery='{{selected_labels}}' query='{{search_term}}' class='list point' list='list' update-lists='getLists()'></list-dir>
         </li>
-        <li class="add-list hover-class">
-        <div ng-hide='addList' ng-click='addList=!addList'>
+        
+    </ul>
+    <li class="add-list hover-class point">
+        <div ng-click='addList=!addList' ng-hide='addList' >
             Add a list...
         </div>
             <!-- <div class='list' ng-show='addList'>
@@ -28,11 +30,10 @@
             </div>
             </div>
         </li>
-    </ul>
 </div>
   <div ng-show='menuOpen' class='menu'>
   <div class='title'>Menu</div>
-  <span ng-click='menuOpen=!menuOpen' class='menu-right'><i class="fa fa-times" aria-hidden="true"></i>
+  <span ng-click='menuOpen=!menuOpen' class='menu-right point'><i class="fa fa-times" aria-hidden="true"></i>
 </span>
   <div class='users'>
     <span ng-repeat='otheruser in users'>
@@ -41,17 +42,24 @@
   </div>
 
     <div class='add-user'>
-      <input placeholder='Add User By Email...' type="text" ng-model='newUser.email'>
-      <button ng-click='addUser(newUser)'><i class="fa fa-user-plus" aria-hidden="true"></i>
+      <input class="form-control add-user-input" placeholder='Add User By Email...' type="text" ng-model='newUser.email'>
+      <button class=" btn btn-success" ng-click='addUser(newUser)'><i class="fa fa-user-plus" aria-hidden="true"></i>
 </button>
     </div>
 
     <div class='filter'>
       <div class='title'>Filter Cards</div>
-      <textarea ng-model='search_term' placeholder='Search Cards...'></textarea>
-      <div> Type to filter by term</div>
-       <ul class='label-list'>
-          <li class='label-element' ng-click='toggleLabel(label.name)' ng-repeat='label in labels'><div ng-style='{"background-color":label.color}' class="label-swatch"></div> <div class="label-title"> {{label.name}} {{label.isSelected}} </div> <div ng-show="label.isSelected" class="label-selected"><i class="fa fa-check" aria-hidden="true"></i></div></li>
+      <textarea class='form-control' ng-model='search_term' placeholder='Search Cards...'></textarea>
+      <div class="filter-subtext"> Type to filter by term or search by labels.</div>
+       <ul class='label-list point'>
+          <li class='label-element' ng-click='toggleLabel(label.name)' ng-repeat='label in labels'>
+            <div ng-style='{"background-color":label.color}' class="label-swatch"></div>
+             <div class="label-title"> {{label.name}}</div>
+              <div ng-show="label.isSelected" class="label-selected">
+                <i class="fa fa-check" aria-hidden="true">
+                  </i>
+                </div>
+              </li>
 </ul>
 
 

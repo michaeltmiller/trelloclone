@@ -9,6 +9,20 @@ angular.module('app').controller('listCtrl', function($scope, authService, userS
 
 	$scope.getCards($scope.list.list_id);
 
+	$scope.labelMatch = function(item){
+		console.log(item, $scope.labelquery)
+		if ($scope.labelquery===""){
+			return true;
+		} else if ($scope.labelquery.includes(item.label)) {
+				return true;
+			}
+				else {
+					return false;
+				}
+			}
+		
+	
+
 	// $scope.$watch('cards', function(){
 	// 	console.log('cards has changed');
 	// });

@@ -2,6 +2,10 @@ $BACKGROUND: #0079BF;
 $HOVER: darken( #0079BF, 10%);
 $GREY: #E2E4E6;
 
+.point{
+    cursor: pointer;    
+}
+
 .dndDraggingSource {
     display: none;
 }
@@ -44,15 +48,14 @@ $GREY: #E2E4E6;
 
 .label{
     float: right;
+    position: relative;
+    right: 5px;
+    top: 3px;
     width:50px;
     height:15px;
     border-radius:3px;
 }
-.label{
-    width:50px;
-    height:15px;
-    border-radius:3px;
-}
+
 
 
 .green{
@@ -209,6 +212,8 @@ a {
     overflow-y: hidden;
 
     .board-title{
+        width: 99vw;
+        position: fixed;
     color: white;
     font-size:25px;
     font-weight: bold;
@@ -221,8 +226,14 @@ a {
 }
 
 .filter{
-    margin-top: 20px;    
+    margin-top: 7px;    
 }
+.filter-subtext{
+    color: #8c8c8c;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid lightgray; 
+};
 
 // button{
 // 	color: white;
@@ -273,7 +284,7 @@ li {
 	}
 	.title{
 		border-bottom: 1px solid lightgrey;
-		font-size: 24px;
+		font-size: 18px;
 		font-weight: bold;
 		text-align: center;
 	}
@@ -283,18 +294,17 @@ li {
     }
 
     button{
-    transform: translateY(1px);
     padding-bottom: 4px;
     padding-top: 7px;
     }
 
-    .add-user{
-
-        button{
-
-        }
+    .add-user{   
         padding-bottom: 20px;
         border-bottom: 1px solid lightgrey;
+    }
+    .add-user-input{
+        display: inline-block;
+        width: 83%;
     }
 
     .user-card-dir{
@@ -315,18 +325,19 @@ li {
 }
 
 .menu-button{
+    padding: 5px;
 	    font-size: 13px;
     float: right;
-    margin-right: 7px;
+    margin-right: 2px;
     font-weight: normal;
     text-decoration: underline;
-    margin-top: 9px;
+    margin-top: 4px;
     margin-bottom: auto;
     border-radius: 3px;
 
 }
     .menu-button:hover{
-    background-color: darken ( $BACKGROUND, 4% );
+    background-color: darken($BACKGROUND, 4%);
     }
 .label-list{
     margin: 0px;
@@ -359,16 +370,20 @@ li {
     margin-right: 10px;
 }
 .board-lists {
+    width: 100vw;
+    overflow-x: visible;
     display: flex;
     flex-direction: row;
 }
+.board-menu{
+    margin-top: 40px;
+}
 
 .board-content{
+    width: 100vw;
 	display: flex;
 	height: 92vh;
 	background-color: $BACKGROUND;
-	overflow-x: auto;
-
 	}
 
 
@@ -522,7 +537,10 @@ li {
 .cards-list{
 	min-height: 25px;
 }
-
+.card-title{
+    position: relative;
+    display: inline-block;
+};
 .card {
     width: 100%;
     border-radius: 3px;

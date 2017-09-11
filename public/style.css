@@ -1,3 +1,6 @@
+.point {
+  cursor: pointer; }
+
 .dndDraggingSource {
   display: none; }
 
@@ -35,11 +38,9 @@
 
 .label {
   float: right;
-  width: 50px;
-  height: 15px;
-  border-radius: 3px; }
-
-.label {
+  position: relative;
+  right: 5px;
+  top: 3px;
   width: 50px;
   height: 15px;
   border-radius: 3px; }
@@ -174,6 +175,8 @@
   .board-wrapper ::-webkit-scrollbar-button {
     display: none; }
   .board-wrapper .board-title {
+    width: 99vw;
+    position: fixed;
     color: white;
     font-size: 25px;
     font-weight: bold;
@@ -184,7 +187,13 @@
   padding: 2px; }
 
 .filter {
-  margin-top: 20px; }
+  margin-top: 7px; }
+
+.filter-subtext {
+  color: #8c8c8c;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid lightgray; }
 
 ul {
   list-style-type: none;
@@ -211,18 +220,20 @@ li {
     top: 5px; }
   .menu .title {
     border-bottom: 1px solid lightgrey;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
     text-align: center; }
   .menu .users {
     margin-bottom: 15px; }
   .menu button {
-    transform: translateY(1px);
     padding-bottom: 4px;
     padding-top: 7px; }
   .menu .add-user {
     padding-bottom: 20px;
     border-bottom: 1px solid lightgrey; }
+  .menu .add-user-input {
+    display: inline-block;
+    width: 83%; }
   .menu .user-card-dir {
     background-color: darken #D6DADC, 3%; }
   .menu input {
@@ -234,17 +245,18 @@ li {
   height: 92vh; }
 
 .menu-button {
+  padding: 5px;
   font-size: 13px;
   float: right;
-  margin-right: 7px;
+  margin-right: 2px;
   font-weight: normal;
   text-decoration: underline;
-  margin-top: 9px;
+  margin-top: 4px;
   margin-bottom: auto;
   border-radius: 3px; }
 
 .menu-button:hover {
-  background-color: darken #0079BF, 4%; }
+  background-color: #006cab; }
 
 .label-list {
   margin: 0px; }
@@ -277,14 +289,19 @@ li {
   margin-right: 10px; }
 
 .board-lists {
+  width: 100vw;
+  overflow-x: visible;
   display: flex;
   flex-direction: row; }
 
+.board-menu {
+  margin-top: 40px; }
+
 .board-content {
+  width: 100vw;
   display: flex;
   height: 92vh;
-  background-color: #0079BF;
-  overflow-x: auto; }
+  background-color: #0079BF; }
 
 .boards-content {
   height: 96vh;
@@ -409,6 +426,10 @@ li {
 
 .cards-list {
   min-height: 25px; }
+
+.card-title {
+  position: relative;
+  display: inline-block; }
 
 .card {
   width: 100%;

@@ -20,14 +20,16 @@ angular.module("app")
             });
         };
         $scope.getLists();
-
+        $scope.newList={};
+        $scope.newList.board_id=$state.params.board_id;
+        
         $scope.createList = function(newList) {
             userService.createList(newList).then(function(res) {
                 $scope.getLists();
             });
         };
 
-        $scope.update={};
+        $scope.update={board_id: $state.params.board_id};
         $scope.dragStartCallback=function(list_id, list_position) {
             console.log(list_id);
             $scope.update.list_id=list_id;
@@ -64,16 +66,28 @@ angular.module("app")
         $scope.getUsers($state.params.board_id);
 
         $scope.labels = [
-            {name:'No Labels', color:'grey', isSelected: false},
+            {name:'None', color:'white', isSelected: false},
             {name:'red', color:'red', isSelected: false},
             {name:'yellow', color:'yellow', isSelected: false},
             {name:'green', color:'green', isSelected: false}
         ];
+        $scope.selected_labels='';
+        $scope.getSelected = function(arr){
+            let res = arr.filter(function(term){
+              return (term.isSelected);
+            })
+            
+            return res.reduce(function(acc, obj){
+              return acc +' '+ obj.color;
+            }, '');
+          }
         
         $scope.toggleLabel= function(label){
+            let selected=[];
             for (let i=0; i<$scope.labels.length; i++){
                 if ($scope.labels[i].name==label){
                     $scope.labels[i].isSelected=!$scope.labels[i].isSelected;
+                    $scope.selected_labels = $scope.getSelected($scope.labels); 
                 }
             }
         }
