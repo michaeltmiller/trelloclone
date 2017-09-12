@@ -4,7 +4,8 @@ angular.module('app').directive('cardDir', function() {
     templateUrl: './app/directives/card/cardTmpl.html',
     controller: 'cardCtrl',
     scope:{
-			card: '='
+      card: '=',
+      listname: '='
 		}
   };
 });

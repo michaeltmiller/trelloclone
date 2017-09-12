@@ -1,15 +1,17 @@
 <div class='modal-open'>
 	<div class='modal-open-content'>
-    <div class='comment-header'><span class='large-logo'><i class="fa fa-trello" aria-hidden="true"></i>
+    <div class='comment-header'><span class='large-logo bump-right'><i class="fa fa-trello" aria-hidden="true"></i>
 </span>{{card.name}}</div>
+<div class="grey-subtext bump">in list <span class="underline">{{listname}}</span></div>
     <div>{{card.description}}</div>
     <div class='comment-box-left'>
-        <div class='title'>Add Comment</div>
-        <div>
-            <div class='comment-container'>
-                <textarea ng-model='newComment.comment_content' type="text" class='comment-box' placeholder='Write a comment...'></textarea>
+        <div class='comment-container'>
+            <div class='title'>Add Comment</div>
+            <div>
+                <textarea ng-model='newComment.comment_content' type="text" class='comment-box form-control' placeholder='Write a comment...'></textarea>
             </div>
-            <button ng-click='createComment(newComment)'>Send</button>
+            <button ng-show='newComment.comment_content' class='btn btn-success' ng-click='createComment(newComment)'>Save</button>
+            <button ng-show='!newComment.comment_content' class='btn btn-success' disabled>Save</button>
         </div>
         <div class='comments-title'><i class="fa fa-comments" aria-hidden="true"></i>
 <span>Comments</span></div>
@@ -22,13 +24,24 @@
         </div>
     </div>
     <div class='comment-right'>
-    <select ng-model='updateLabel.label' name="labels">
+        <div class="modal-label">Labels</div>
+            <ul class='label-list point'>
+                    <li class='label-element' ng-click='updateLabel.label=label.color; addLabel(updateLabel)' ng-repeat='label in labels'>
+                      <div ng-style='{"background-color":label.color}' class="label-swatch"></div>
+                       <div class="label-title"> {{label.name}}</div>
+                        <div ng-show="card.label==label.color" class="label-selected">
+                          <i class="fa fa-check" aria-hidden="true">
+                            </i>
+                          </div>
+                        </li>
+          </ul>
+    <!-- <select ng-model='updateLabel.label' name="labels">
   <option value='white'>None</option>
   <option value='green' >Green</option>
   <option value='yellow' >Yellow</option>
   <option value='red' >Red</option>
 </select>
-        <button ng-click='addLabel(updateLabel)'>Add Label</button>
+        <button ng-click='addLabel(updateLabel)'>Add Label</button> -->
     </div>
     </div>
 </div>

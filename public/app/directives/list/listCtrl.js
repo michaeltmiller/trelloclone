@@ -10,7 +10,6 @@ angular.module('app').controller('listCtrl', function($scope, authService, userS
 	$scope.getCards($scope.list.list_id);
 
 	$scope.labelMatch = function(item){
-		console.log(item, $scope.labelquery)
 		if ($scope.labelquery===""){
 			return true;
 		} else if ($scope.labelquery.includes(item.label)) {
@@ -31,7 +30,6 @@ angular.module('app').controller('listCtrl', function($scope, authService, userS
 	$scope.newCard.list_id=$scope.list.list_id;
 	$scope.createCard = function(newCard) {
 		userService.createCard(newCard).then(function(res) {
-			console.log('creating card', newCard);
 			$scope.getCards($scope.list.list_id);
 			$scope.newCard.name='';
 		});

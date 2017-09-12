@@ -17,7 +17,7 @@ $scope.open = function () {
 		scope: $scope,
 		windowClass: 'modal-window'
 	}).closed.then(function(){
-
+		$scope.$parent.getCards($scope.card.list_id);
 	});
 };
 $scope.createComment = function(newComment) {
@@ -31,14 +31,20 @@ $scope.updateLabel = {};
 $scope.addLabel = function(updateLabel) {
 	$scope.updateLabel.card_id= $scope.card.card_id;
 	userService.addLabel(updateLabel).then(function(res) {
-		$scope.getCards($scope.card.list_id);
+		$scope.card.label=updateLabel.label;
 	});
 };
 
 $scope.getCards = function(list_id) {
 		userService.getCards(list_id).then(function(res){
 			$scope.cards=res.data;
-			console.log('got cards for', list_id);
 		});
 	};
+
+	$scope.labels = [
+		{name:'None', color:'white', isSelected: false},
+		{name:'red', color:'red', isSelected: false},
+		{name:'yellow', color:'yellow', isSelected: false},
+		{name:'green', color:'green', isSelected: false}
+	];
 });
