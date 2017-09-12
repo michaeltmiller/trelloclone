@@ -289,7 +289,6 @@ li {
   margin-right: 10px; }
 
 .board-lists {
-  width: 100vw;
   overflow-x: visible;
   display: flex;
   flex-direction: row; }
