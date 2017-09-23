@@ -1,11 +1,13 @@
 <div class='card' ng-click='open()'>
     <div class="card-title"> {{card.name}}
-    <div class='comment-count' ng-show='commentsCount'>
+    <div>
+        <div class='comment-count' ng-show='commentsCount'>
         <span class="comment-logo"><i class="fa fa-comments-o" aria-hidden="true"></i>
 
         </span>
         <span class='small-text'>{{commentsCount}}</span>
     </div>
-</div>
     <div class='label {{card.label}}'> </div>
+    </div>
+</div>
 </div>
